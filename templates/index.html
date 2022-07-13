@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendor</title>
+</head>
+
+<h3>
+    Crop Recommendor
+</h3>
+
+    <p>
+        What it does: <br>
+        Having problems on deciding what crop to plant under a given climatic condition? <br>
+        This web app will help you decide that. The machine learning model underlying this operation has been heavly trained <br>
+        on different crops under different conditions and has a very high accuracy.<br>
+        You are  required to fill the following required fields and submit. <br>
+         Scroll down after submiting to get the best crop that fits your climatic conditions <br>
+    </p>
+<h2 style="color: black;">
+    
+        Imput the following fields
+    
+    
+</h2>
+<body>
+    <h1>
+        <form style="color: black;" action="/" method="post">
+            <input type="value" name="Nitrogen" placeholder="Nitrogen content in the soil" required>
+            <br>
+            <input type="value" name="Phosphorous" placeholder="Phosphorous content in the soil" required>
+            <br>
+            <input type="value" name="Potassium" placeholder="Potassium content in the soil" required>
+            <br>
+            <input type="value" name="temperature" placeholder="Temperature (°C)" required>
+            <br>
+            <input type="value" name="Relative Humidity(%)" placeholder="Relative Humidity(%)" required>
+            <br>
+            <input type="value" name="ph" placeholder="ph of Soil" required>
+            <br>
+            <input type="value" name="rainfall(mm)" placeholder="Amount of Rainfall(mm) " required>
+            <select name="location" id="">
+                <option value="Karen">Karen</option>
+                <option value="Westlands">Westlands</option>
+                <option value="Rongai">Rongai</option>
+                <option value="Ngong">Ngong</option>
+            </select>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+          
+    </h1>
+
+    {% if prediction %}
+    <p style="font-size: 0.5cm;"  > The most suitable crop to plant under the given conditions is <br> {{prediction}}</p>
+{% endif %}
+   
+</body>
+</html>
+
+<style>
+
+h3 {
+    padding-top: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    font-size: 0.75cm;
+    background:  darkslategrey;
+    margin: 0 0;
+    margin-left: 0;
+    color: rgb(221, 212, 212);
+}
+
+body  {
+    height: 100%;
+    padding-top: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    font-size: 0.4cm;
+    color: white;
+    text-align: center;
+    --background-image:  url(/static/miha-rekar--wm9OmdN_Ig-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    line-height: 1.8;
+    background-attachment: fixed;
+    background-color:dimgray;
+    
+
+
+}
+
+</style>
